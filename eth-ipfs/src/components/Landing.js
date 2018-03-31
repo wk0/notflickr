@@ -16,7 +16,7 @@ class Landing extends React.Component{
 
 
     componentDidMount(){
-        blockstack.getFile('images2.json', true).then((userimages)=>{
+        blockstack.getFile('images3.json', false).then((userimages)=>{
             var images = JSON.parse(userimages || '[]')
             console.log(images);
             this.setState({
@@ -32,7 +32,7 @@ class Landing extends React.Component{
     }
 
     handleGetFile(){
-        blockstack.getFile('images2.json', true)
+        blockstack.getFile('images3.json', false)
         .then((test) => {
           var testfile = JSON.parse(test || '[]')
           console.log(testfile);

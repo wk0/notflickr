@@ -25,19 +25,22 @@ export default class HeaderComponent extends React.Component {
                     <Button
                         color="inherit"
                         component={rootLink}
+                        style={{fontFamily: 'Oswald', fontSize: '24px'}}
                     >
-                        PhotoSharing
+                        Not Flickr
                     </Button>
-
                     <div>
                         <Button
-                            color="inherit"
+                            variant="raised" 
+                            color="primary"
                             component={uploadLink}
+                            style={{marginRight: '10px'}}
                         >
                             Upload
                         </Button>
                         <Button
-                            color="inherit"
+                            variant="raised" 
+                            color="secondary"
                             component={gallery}
                         >
                             Gallery

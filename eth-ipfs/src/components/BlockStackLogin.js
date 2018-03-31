@@ -34,9 +34,9 @@ class BlockStackLogin extends React.Component{
 
         return (
             <div>            
-                <h1 style={{textAlign:'center'}}>Decentralized Flickr</h1>
+                <h1 style={{textAlign:'center', fontFamily: 'Oswald'}}>Not Flickr</h1>
                 <br/>
-                <Button style={{marginLeft: '325px'}} variant="raised" color="primary" onClick={this.handleClick}>Login</Button>
+                <Button style={{marginLeft: '485px'}} variant="raised" color="primary" onClick={this.handleClick}>Login</Button>
             </div>
         );
     }

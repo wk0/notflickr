@@ -77,10 +77,10 @@ class IPFSUpload extends Component {
         //setState by setting ipfsHash to ipfsHash[0].hash 
         this.setState({ ipfsHash:ipfsHash[0].hash });
 
-        blockstack.getFile('images2.json', true).then((userimages)=>{
+        blockstack.getFile('images3.json', false).then((userimages)=>{
           var images = JSON.parse(userimages || '[]');
           images.push(ipfsHash[0].hash);
-          blockstack.putFile('images2.json', JSON.stringify(images), true);
+          blockstack.putFile('images3.json', JSON.stringify(images), false);
       });
 
 
