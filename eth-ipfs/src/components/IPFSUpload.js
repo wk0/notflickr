@@ -1,7 +1,7 @@
 import {Table, Grid, Button, Form } from 'react-bootstrap';
 import React, { Component } from 'react';
 //import logo from './logo.svg';
-import './App.css';
+import '../App.css';
 import web3 from '../web3';
 import ipfs from '../ipfs';
 import storehash from '../storehash';
