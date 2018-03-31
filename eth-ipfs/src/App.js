@@ -7,7 +7,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-d
 import Header from './components/Header'
 import IPFSUpload from './components/IPFSUpload'
 import Landing from './components/Landing'
-
+import BlockStackLogin from './components/BlockStackLogin';
 
 
 
@@ -21,6 +21,7 @@ class App extends Component {
           <Header/>
           <Switch>
             <Route exact path="/" component={IPFSUpload}/>
+            <Route path="login" component={BlockStackLogin}/>
           </Switch>
           </div>
         </Router> 
