@@ -8,8 +8,7 @@ import Header from './components/Header'
 import IPFSUpload from './components/IPFSUpload'
 import Landing from './components/Landing'
 import BlockStackLogin from './components/BlockStackLogin';
-
-
+import Gallery from './components/Gallery'
 
 
 class App extends Component {
@@ -20,8 +19,11 @@ class App extends Component {
           <div>
           <Header/>
           <Switch>
-            <Route exact path="/" component={IPFSUpload}/>
+            <Route exact path="/upload" component={IPFSUpload}/>
             <Route path="login" component={BlockStackLogin}/>
+            <Route path="/gallery" component={Gallery}/>
+            <Route path="/" component={Landing}/>
+
           </Switch>
           </div>
         </Router> 
