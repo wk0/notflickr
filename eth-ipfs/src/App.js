@@ -4,12 +4,12 @@ import React, { Component } from 'react';
 import './App.css';
 
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
-import Header from './components/Header'
-import IPFSUpload from './components/IPFSUpload'
-import Landing from './components/Landing'
+import Header from './components/Header';
+import IPFSUpload from './components/IPFSUpload';
+import Landing from './components/Landing';
 import BlockStackLogin from './components/BlockStackLogin';
-import Detail from './components/Detail'
-
+import Detail from './components/Detail';
+import Viewprofile from './components/ViewProfile';
 class App extends Component {
     render() {
       return (
@@ -22,7 +22,7 @@ class App extends Component {
             <Route path="/gallery" component={Landing}/>
             <Route path="/detail" component={Detail}/>
             <Route path="/" component={BlockStackLogin}/>
-
+            <Route path="/viewprofile/:blockstackid/:decrypt" component={Viewprofile}/>
           </Switch>
           </div>
         </Router> 
