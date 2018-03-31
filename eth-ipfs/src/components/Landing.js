@@ -1,6 +1,8 @@
 import React from "react";
 import * as blockstack from 'blockstack'
 import Button from "material-ui/Button"
+import List, {ListItem} from "material-ui/List";
+import Detail from "./Detail";
 class Landing extends React.Component{
 
     constructor(props){
@@ -14,13 +16,14 @@ class Landing extends React.Component{
 
 
     componentDidMount(){
-        blockstack.getFile('images.json', true).then((userimages)=>{
+        blockstack.getFile('images2.json', true).then((userimages)=>{
             var images = JSON.parse(userimages || '[]')
+            console.log(images);
             this.setState({
                 userimages : images
             })
         })
-
+        
     }
 
     handlePutFile(){
@@ -29,7 +32,7 @@ class Landing extends React.Component{
     }
 
     handleGetFile(){
-        blockstack.getFile('test.json', true)
+        blockstack.getFile('images2.json', true)
         .then((test) => {
           var testfile = JSON.parse(test || '[]')
           console.log(testfile);
@@ -39,10 +42,19 @@ class Landing extends React.Component{
     render(){
         return(
             <div>
-
-            <div>Landing</div>
-            <Button onClick={this.handlePutFile}>Add</Button>
-            <Button onClick={this.handleGetFile}>Get</Button>
+            <List>
+            {this.state.userimages.map((item, index)=>{
+                return (
+                <div>
+                <ListItem key={index}>
+                <Detail 
+                    imgHash={item}
+                />
+                </ListItem>
+                </div>
+                );
+            })} 
+            </List>   
             </div>
         );
     }

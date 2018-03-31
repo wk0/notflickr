@@ -19,13 +19,13 @@ class Detail extends React.Component{
         console.log(this.props)
 
         //const {id} = this.props.match.params;
-        const id = this.props.location.state.imgHash
-    }
+        const id = this.props.imgHash ?  this.props.imgHash : this.props.location.state.imgHash
+    } 
 
     render(){
         const { classes } = this.props;
         //const {id} = this.props.match.params;
-        const id = this.props.location.state.imgHash
+        const id =  this.props.imgHash
 
         const imgSrc="https://ipfs.io/ipfs/"+id;
         return(
@@ -38,11 +38,10 @@ class Detail extends React.Component{
                 /> 
                 <CardContent>
                 <h2>
-                    Lizard
+                    IPFS Image
                 </h2>
                 <p>
-                    Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                    across all continents except Antarctica
+                    {id}
                 </p>
                 </CardContent>
                 <CardActions>
