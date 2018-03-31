@@ -22,7 +22,7 @@ class App extends Component {
             <Route exact path="/upload" component={IPFSUpload}/>
             <Route path="/login" component={BlockStackLogin}/>
             <Route path="/gallery" component={Gallery}/>
-            <Route path="/detail/:id" component={Detail}/>
+            <Route path="/detail" component={Detail}/>
             <Route path="/" component={Landing}/>
 
           </Switch>

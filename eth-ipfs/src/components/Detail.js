@@ -3,7 +3,6 @@ import Card, { CardActions, CardContent, CardMedia } from 'material-ui/Card';
 import Button from 'material-ui/Button';
 import { withStyles } from 'material-ui/styles';
 
-
 const styles = {
     card: {
       maxWidth: 345,
@@ -17,13 +16,17 @@ class Detail extends React.Component{
 
     constructor(props){
         super(props);
+        console.log(this.props)
 
-        const {id} = this.props.match.params;
+        //const {id} = this.props.match.params;
+        const id = this.props.location.state.imgHash
     }
 
     render(){
         const { classes } = this.props;
-        const {id} = this.props.match.params;
+        //const {id} = this.props.match.params;
+        const id = this.props.location.state.imgHash
+
         const imgSrc="https://ipfs.io/ipfs/"+id;
         return(
             <div>
