@@ -9,7 +9,7 @@ import IPFSUpload from './components/IPFSUpload'
 import Landing from './components/Landing'
 import BlockStackLogin from './components/BlockStackLogin';
 import Gallery from './components/Gallery'
-
+import Detail from './components/Detail'
 
 class App extends Component {
     render() {
@@ -20,8 +20,9 @@ class App extends Component {
           <Header/>
           <Switch>
             <Route exact path="/upload" component={IPFSUpload}/>
-            <Route path="login" component={BlockStackLogin}/>
+            <Route path="/login" component={BlockStackLogin}/>
             <Route path="/gallery" component={Gallery}/>
+            <Route path="/detail/:id" component={Detail}/>
             <Route path="/" component={Landing}/>
 
           </Switch>

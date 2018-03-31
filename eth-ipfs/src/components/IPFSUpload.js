@@ -5,6 +5,7 @@ import '../App.css';
 import web3 from '../web3';
 import ipfs from '../ipfs';
 import storehash from '../storehash';
+import { Redirect } from 'react-router-dom'
 
 class IPFSUpload extends Component {
  
@@ -88,7 +89,12 @@ class IPFSUpload extends Component {
     }; //onSubmit 
   
     render() {
-      
+      if (this.state.ipfsHash){
+        const url = '/detail/' + this.state.ipfsHash;
+        return <Redirect to={url}/>
+        console.log("txn hash", this.state.ipfsHash)
+      }
+
       return (
         <div className="UploadForm">
         <Grid>
