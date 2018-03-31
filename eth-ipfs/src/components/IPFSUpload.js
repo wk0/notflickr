@@ -101,7 +101,7 @@ class IPFSUpload extends Component {
       if (this.state.ipfsHash){
 
         this.props.history.push({
-          pathname: '/detail',
+          pathname: '/gallery',
           state: {imgHash: this.state.ipfsHash}
         });
  

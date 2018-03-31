@@ -15,6 +15,9 @@ export default class HeaderComponent extends React.Component {
 
     render() {
         const rootLink = props => <Link to="/" {...props} />
+        const uploadLink = props => <Link to="/upload" {...props} />
+        const gallery = props => <Link to="/gallery" {...props} />
+
 
         return(
             <AppBar position="static" color="default">
@@ -27,12 +30,19 @@ export default class HeaderComponent extends React.Component {
                     </Button>
 
                     <div>
-                        <Button>
-                            Sign In
+                        <Button
+                            color="inherit"
+                            component={uploadLink}
+                        >
+                            Upload
                         </Button>
-                        <Button>
-                            Sign Up
+                        <Button
+                            color="inherit"
+                            component={gallery}
+                        >
+                            Gallery
                         </Button>
+
                     </div>
                 </Toolbar>
             </AppBar>

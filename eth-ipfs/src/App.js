@@ -19,9 +19,9 @@ class App extends Component {
           <Header/>
           <Switch>
             <Route exact path="/upload" component={IPFSUpload}/>
-            <Route path="/login" component={BlockStackLogin}/>
+            <Route path="/gallery" component={Landing}/>
             <Route path="/detail" component={Detail}/>
-            <Route path="/" component={Landing}/>
+            <Route path="/" component={BlockStackLogin}/>
 
           </Switch>
           </div>

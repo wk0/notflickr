@@ -28,15 +28,23 @@ class BlockStackLogin extends React.Component{
     }
 
     render(){
+        if (this.props.location.search){
+            return <Redirect to="/gallery"/>
+        }
+
         return (
             <div>            
-            <div style = {{marginLeft: 700, marginTop: 200, marginBottom: 20}}>
-            <h1>Decentralized Flickr</h1>
-            <div style = {{marginLeft:120}}><Button onClick={this.handleClick}>Login</Button></div>
-            </div>
+                <h1 style={{textAlign:'center'}}>Decentralized Flickr</h1>
+                <br/>
+                <Button style={{marginLeft: '325px'}} variant="raised" color="primary" onClick={this.handleClick}>Login</Button>
             </div>
         );
     }
 }
+
+// <div style = {{marginLeft: 700, marginTop: 200, marginBottom: 20}}>
+//             </div>
+//            <div style = {{marginLeft:120}}><Button onClick={this.handleClick}>Login</Button></div>
+
 
 export default BlockStackLogin;
