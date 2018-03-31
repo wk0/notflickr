@@ -25,11 +25,6 @@ class BlockStackLogin extends React.Component{
         var authRequest = blockstack.makeAuthRequest(blockstack.generateAndStoreTransitKey(), redirectURI, manifestURI, scopes)
         blockstack.redirectToSignInWithAuthRequest(authRequest, BLOCKSTACK_HOST)
 
-        this.props.history.push({
-            pathname: '/gallery'
-
-        })
-
     }
 
     render(){

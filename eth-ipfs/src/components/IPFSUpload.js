@@ -6,6 +6,8 @@ import web3 from '../web3';
 import ipfs from '../ipfs';
 import storehash from '../storehash';
 import { Redirect } from 'react-router-dom'
+const blockstack = require('blockstack');
+
 
 class IPFSUpload extends Component {
  
@@ -75,6 +77,13 @@ class IPFSUpload extends Component {
         //setState by setting ipfsHash to ipfsHash[0].hash 
         this.setState({ ipfsHash:ipfsHash[0].hash });
 
+        blockstack.getFile('images.json', true).then((userimages)=>{
+          var images = JSON.parse(userimages || '[]');
+          images.push(ipfsHash[0]);
+          blockstack.putFile('images.json', JSON.stringify(images), true);
+      });
+
+
         // call Ethereum contract method "sendHash" and .send IPFS hash to etheruem contract 
         //return the transaction hash from the ethereum contract
         //see, this https://web3js.readthedocs.io/en/1.0/web3-eth-contract.html#methods-mymethod-send
@@ -90,6 +99,8 @@ class IPFSUpload extends Component {
   
     render() {
       if (this.state.ipfsHash){
+
+
         const url = '/detail/' + this.state.ipfsHash;
         return <Redirect to={url}/>
         console.log("txn hash", this.state.ipfsHash)
