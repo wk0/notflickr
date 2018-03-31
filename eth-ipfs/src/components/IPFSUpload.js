@@ -100,10 +100,11 @@ class IPFSUpload extends Component {
     render() {
       if (this.state.ipfsHash){
 
-
-        const url = '/detail/' + this.state.ipfsHash;
-        return <Redirect to={url}/>
-        console.log("txn hash", this.state.ipfsHash)
+        this.props.history.push({
+          pathname: '/detail',
+          state: {imgHash: this.state.ipfsHash}
+        });
+ 
       }
 
       return (
