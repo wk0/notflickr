@@ -5,7 +5,10 @@
   "dependencies": {
     "bootstrap": "^3.3.7",
     "fs-extra": "^5.0.0",
+    "install": "^0.11.0",
     "ipfs-api": "^18.1.1",
+    "material-ui": "^1.0.0-beta.39",
+    "npm": "^5.8.0",
     "react": "^16.2.0",
     "react-bootstrap": "^0.32.1",
     "react-dom": "^16.2.0",
