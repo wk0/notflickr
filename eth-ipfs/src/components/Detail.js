@@ -29,7 +29,7 @@ class Detail extends React.Component{
 
         const imgSrc="https://ipfs.io/ipfs/"+id;
         return(
-            <div>
+            <div style={{marginLeft: '300px'}} >
             <Card className={classes.card}>
                 <CardMedia
                     className={classes.media}

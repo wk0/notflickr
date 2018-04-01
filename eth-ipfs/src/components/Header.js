@@ -34,7 +34,7 @@ export default class HeaderComponent extends React.Component {
                             variant="raised" 
                             color="primary"
                             component={uploadLink}
-                            style={{marginRight: '10px'}}
+                            style={{fontFamily: 'Oswald', marginRight: '10px', fontSize: '14px'}}
                         >
                             Upload
                         </Button>
@@ -42,6 +42,7 @@ export default class HeaderComponent extends React.Component {
                             variant="raised" 
                             color="secondary"
                             component={gallery}
+                            style={{fontFamily: 'Oswald', fontSize: '14px'}}
                         >
                             Gallery
                         </Button>

@@ -1,4 +1,5 @@
-import {Table, Grid, Button, Form } from 'react-bootstrap';
+import {Table, Grid, Form } from 'react-bootstrap';
+import Button from "material-ui/Button"
 import React, { Component } from 'react';
 //import logo from './logo.svg';
 import '../App.css';
@@ -110,21 +111,30 @@ class IPFSUpload extends Component {
       return (
         <div className="UploadForm">
         <Grid>
-          <h3> Choose file to send to IPFS </h3>
+          <h3 style={{fontFamily: 'Oswald', fontSize: '24px'}}> Choose file to send to IPFS </h3>
+          <br/>
           <Form onSubmit={this.onSubmit}>
+            
             <input 
               type = "file"
               onChange = {this.captureFile}
             />
-             <Button 
-             bsStyle="primary" 
-             type="submit"> 
-             Send it 
+             
+            <Button
+             variant="raised" 
+             color="primary"
+             style={{fontFamily: 'Oswald', marginRight: '10px', fontSize: '14px'}}
+            >
+              Send it 
              </Button>
           </Form>
 
           <hr/>
-            <Button onClick = {this.onClick}> Get Transaction Receipt </Button>
+            <Button
+              variant="raised" 
+              color="secondary"
+              style={{fontFamily: 'Oswald', marginRight: '10px', fontSize: '14px'}}
+              onClick = {this.onClick}> Get Transaction Receipt </Button>
 
               <Table bordered responsive>
                 <thead>

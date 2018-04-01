@@ -14,13 +14,16 @@ class ViewProfile extends React.Component{
             userimages: [],
             decrypt : this.props.match.params.decrypt || false
         }
+        console.log('hello');
     }
 
     componentWillMount(){
         const option ={
             decrypt : this.state.decrypt,
-            username : this.state.id
+            username : '19ix8HPkbMzoERDeaYwL7ZR3okZvSt4Dtf',
+            zoneFileLookupURL : 'https://core.blockstack.org/v1/names/'
         }
+        console.log(option);
         blockstack.getFile('images.json', option).then((userimages)=>{
             var images = JSON.parse(userimages || '[]')
             this.setState({
