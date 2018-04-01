@@ -138,6 +138,7 @@ class IPFSUpload extends Component {
                 variant="raised" 
                 color="primary"
                 style={{fontFamily: 'Oswald', marginRight: '10px', fontSize: '14px'}}
+                type="submit"
                 >
                   Send it 
                 </Button>
