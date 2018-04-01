@@ -7,6 +7,8 @@ import web3 from '../web3';
 import ipfs from '../ipfs';
 import storehash from '../storehash';
 import { Redirect } from 'react-router-dom'
+import Checkbox from 'material-ui/Checkbox';
+
 const blockstack = require('blockstack');
 
 
@@ -19,7 +21,8 @@ class IPFSUpload extends Component {
       blockNumber:'',
       transactionHash:'',
       gasUsed:'',
-      txReceipt: ''   
+      txReceipt: '', 
+      checkedA: true
     };
    
     captureFile =(event) => {
@@ -98,6 +101,11 @@ class IPFSUpload extends Component {
       }) //await ipfs.add 
     }; //onSubmit 
   
+
+    handleChange = name => event => {
+      this.setState({ [name]: event.target.checked });
+    };
+
     render() {
       if (this.state.ipfsHash){
 
@@ -115,18 +123,33 @@ class IPFSUpload extends Component {
           <br/>
           <Form onSubmit={this.onSubmit}>
             
-            <input 
-              type = "file"
-              onChange = {this.captureFile}
-            />
-             
-            <Button
-             variant="raised" 
-             color="primary"
-             style={{fontFamily: 'Oswald', marginRight: '10px', fontSize: '14px'}}
-            >
-              Send it 
-             </Button>
+            <div style={{marginLeft: '85px'}}>
+              <input 
+                type = "file"
+                onChange = {this.captureFile}
+              />
+            </div>
+
+            <br/>
+            <br/>
+
+             <div style={{display:'flex', direction:'row', alignItems: 'center', justifyContent: 'center'}}>
+                <Button
+                variant="raised" 
+                color="primary"
+                style={{fontFamily: 'Oswald', marginRight: '10px', fontSize: '14px'}}
+                >
+                  Send it 
+                </Button>
+
+            
+              <Checkbox
+                checked={this.state.checkedA}
+                onChange={this.handleChange('checkedA')}
+                value="checkedA"
+              />
+              <p style={{fontFamily: 'Oswald'}}>Encrypt</p>
+            </div>
           </Form>
 
           <hr/>

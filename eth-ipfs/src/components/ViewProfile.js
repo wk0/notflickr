@@ -20,7 +20,7 @@ class ViewProfile extends React.Component{
     componentWillMount(){
         const option ={
             decrypt : this.state.decrypt,
-            username : '19ix8HPkbMzoERDeaYwL7ZR3okZvSt4Dtf',
+            username : 'johnny.person.id',
             zoneFileLookupURL : 'https://core.blockstack.org/v1/names/'
         }
         console.log(option);
